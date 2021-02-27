@@ -29,7 +29,7 @@ protocol RecipeSearchViewProtocol {
 }
 
 protocol RecipeSearchViewDelegate{
-    func fetchData(search:String)
+    func searchRecipe(search:String)
     func viewDidLoad()
     func userDidTapOnRecipe(id:String)
 }
@@ -50,5 +50,5 @@ protocol RecipeSearchInteractorListenerProtocol {
 /* presenter */
 
 protocol RecipeSearchRouterProtocol {
-    static func initModule(viewref:UIViewController)
+    static func initModule(viewref:RecipeSearchViewProtocol)
 }

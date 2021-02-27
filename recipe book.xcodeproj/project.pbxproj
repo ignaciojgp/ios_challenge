@@ -21,6 +21,7 @@
 		FF288BAF25EA8B6A00F5BA05 /* RecipeSearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF288BAE25EA8B6A00F5BA05 /* RecipeSearchRouter.swift */; };
 		FF288BB625EA8B9000F5BA05 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF288BB525EA8B9000F5BA05 /* Recipe.swift */; };
 		FF288BBE25EA8FF400F5BA05 /* RecipeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF288BBD25EA8FF400F5BA05 /* RecipeList.swift */; };
+		FF288BC325EA93CC00F5BA05 /* RecipeSearchViewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF288BC225EA93CC00F5BA05 /* RecipeSearchViewTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		FF288BAE25EA8B6A00F5BA05 /* RecipeSearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeSearchRouter.swift; sourceTree = "<group>"; };
 		FF288BB525EA8B9000F5BA05 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		FF288BBD25EA8FF400F5BA05 /* RecipeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeList.swift; sourceTree = "<group>"; };
+		FF288BC225EA93CC00F5BA05 /* RecipeSearchViewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeSearchViewTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 		FF288B9B25EA8AAD00F5BA05 /* RecipeSearchModule */ = {
 			isa = PBXGroup;
 			children = (
+				FF288BC725EA93D100F5BA05 /* view */,
 				FF288B9C25EA8AD200F5BA05 /* RecipeSearchProtocols.swift */,
 				FF288BA425EA8B4C00F5BA05 /* RecipeSearchPresenter.swift */,
 				FF288BA925EA8B5B00F5BA05 /* RecipeSearchInteractor.swift */,
@@ -176,6 +179,14 @@
 				FF288BBD25EA8FF400F5BA05 /* RecipeList.swift */,
 			);
 			path = entity;
+			sourceTree = "<group>";
+		};
+		FF288BC725EA93D100F5BA05 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				FF288BC225EA93CC00F5BA05 /* RecipeSearchViewTableViewController.swift */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,6 +321,7 @@
 			files = (
 				FF288BAA25EA8B5B00F5BA05 /* RecipeSearchInteractor.swift in Sources */,
 				FF288BBE25EA8FF400F5BA05 /* RecipeList.swift in Sources */,
+				FF288BC325EA93CC00F5BA05 /* RecipeSearchViewTableViewController.swift in Sources */,
 				FF288BAF25EA8B6A00F5BA05 /* RecipeSearchRouter.swift in Sources */,
 				FF288BA525EA8B4C00F5BA05 /* RecipeSearchPresenter.swift in Sources */,
 				FF288B6C25EA894100F5BA05 /* ViewController.swift in Sources */,

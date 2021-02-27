@@ -26,8 +26,8 @@ class RecipeSearchPresenter: NSObject, RecipeSearchPresenterProtocol , RecipeSea
     }
     
     // MARK: view delegate
-    func fetchData(search: String) {
-        
+    func searchRecipe(search: String) {
+        self.interactor?.loadData(search: search)
     }
     func userDidTapOnRecipe(id: String) {
         

@@ -35,18 +35,27 @@ class RecipeSearchInteractor: NSObject, RecipeSearchInteractorProtocol {
             let task = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
                 
                 guard let httpResponse = response as? HTTPURLResponse else {
-                    self.presenter?.onLoadDataFailure(description: "Ocurrió un error")
+                    DispatchQueue.main.async {
+                        self.presenter?.onLoadDataFailure(description: "Ocurrió un error")
+                        
+                    }
                     return
                 }
                 //eval code
                 
                 if httpResponse.statusCode != 200 {
-                    self.presenter?.onLoadDataFailure(description: "Ocurrió un error \(httpResponse.statusCode)")
+                    DispatchQueue.main.async {
+                        self.presenter?.onLoadDataFailure(description: "Ocurrió un error \(httpResponse.statusCode)")
+                    }
+                    return
                 }
                 
                 
                 guard let responseData = data else {
-                    self.presenter?.onLoadDataFailure(description: "Respuesta vacía \(httpResponse.statusCode)")
+                    DispatchQueue.main.async {
+                        
+                        self.presenter?.onLoadDataFailure(description: "Respuesta vacía \(httpResponse.statusCode)")
+                    }
                     return
                 }
                 
@@ -55,15 +64,22 @@ class RecipeSearchInteractor: NSObject, RecipeSearchInteractorProtocol {
                     let decodedResponse = try decoder.decode(RecipeResponse.self, from: responseData)
                     
                     guard let list = decodedResponse.meals else {
-                        self.presenter?.onLoadDataFailure(description: "No se pudo obtener una lista")
+                        DispatchQueue.main.async {
+                            
+                            self.presenter?.onLoadDataFailure(description: "No se pudo obtener una lista")
+                        }
                         return
                     }
-                    
-                    self.presenter?.onLoadDataSuccess(list: list)
-                    
+                    DispatchQueue.main.async {
+                        
+                        self.presenter?.onLoadDataSuccess(list: list)
+                    }
                     
                 }catch{
-                    self.presenter?.onLoadDataFailure(description: "Formato erroneo \(error.localizedDescription)")
+                    DispatchQueue.main.async {
+                        
+                        self.presenter?.onLoadDataFailure(description: "Formato erroneo \(error.localizedDescription)")
+                    }
                 }
                 
                 
