@@ -11,7 +11,8 @@ class RecipeDetailViewController: UIViewController, RecipeDetailViewProtocol {
     
     
     var presenter: RecipeDetailViewDelegate?
-    
+    var ingredientList = Array<String>()
+
     @IBOutlet weak var iamge: UIImageView!
     @IBOutlet weak var instructions: UITextView!
     @IBOutlet weak var ingredients: UITableView!
@@ -51,6 +52,40 @@ class RecipeDetailViewController: UIViewController, RecipeDetailViewProtocol {
                                   completionHandler: {
                                     (success) in
                                   })
+    }
+    
+    func createIngredientList(recipe:RecipeDetail){
+        
+        ingredientList.removeAll()
+        
+        addIngredient(val: recipe.strIngredient1)
+        addIngredient(val: recipe.strIngredient2)
+        addIngredient(val: recipe.strIngredient3)
+        addIngredient(val: recipe.strIngredient4)
+        addIngredient(val: recipe.strIngredient5)
+        addIngredient(val: recipe.strIngredient6)
+        addIngredient(val: recipe.strIngredient7)
+        addIngredient(val: recipe.strIngredient8)
+        addIngredient(val: recipe.strIngredient9)
+        addIngredient(val: recipe.strIngredient10)
+        addIngredient(val: recipe.strIngredient11)
+        addIngredient(val: recipe.strIngredient12)
+        addIngredient(val: recipe.strIngredient13)
+        addIngredient(val: recipe.strIngredient14)
+        addIngredient(val: recipe.strIngredient15)
+        addIngredient(val: recipe.strIngredient16)
+        addIngredient(val: recipe.strIngredient17)
+        addIngredient(val: recipe.strIngredient18)
+        addIngredient(val: recipe.strIngredient19)
+        addIngredient(val: recipe.strIngredient20)
+        
+        
+    }
+    
+    func addIngredient(val:String?){
+        if val != nil && !val!.elementsEqual("") {
+            ingredientList.append(val!)
+        }
     }
     
     /*

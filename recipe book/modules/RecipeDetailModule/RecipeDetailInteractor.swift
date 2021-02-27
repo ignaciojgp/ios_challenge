@@ -54,6 +54,12 @@ class RecipeDetailInteractor: RecipeDetailInteractorProtocol {
                             
                         }
                         
+                        
+
+                        
+                        
+                        
+                        
                         self.presenter?.onLoadDataSuccess(recipe: recipe)
                         
                     }catch{
