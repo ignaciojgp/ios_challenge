@@ -28,9 +28,7 @@ class RecipeSearchInteractor: NSObject, RecipeSearchInteractorProtocol {
             
             var urlRequest = URLRequest(url: url )
             
-            // urlRequest.httpMethod = "GET"
-            // urlRequest.addValue("value", forHTTPHeaderField: "header name")
-            // urlRequest.httpBody = "myjsonbody".data(using: .utf8)
+            
             
             let task = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
                 
@@ -89,6 +87,9 @@ class RecipeSearchInteractor: NSObject, RecipeSearchInteractorProtocol {
             
         }
     }
+    
+    
+    
     
     
     

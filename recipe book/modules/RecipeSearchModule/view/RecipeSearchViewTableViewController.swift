@@ -12,6 +12,8 @@ class RecipeSearchViewTableViewController: UITableViewController,  RecipeSearchV
    
     var list:Array<Recipe>?
     
+    var tasksmap = Dictionary<UITableViewCell, URLSessionTask> ()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,12 +56,23 @@ class RecipeSearchViewTableViewController: UITableViewController,  RecipeSearchV
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "defaultcell")!
         
+        if let currentTask = tasksmap[cell] {
+            currentTask.cancel()
+        }
+        
+        cell.imageView?.image = UIImage(named: "thumb")
         cell.textLabel?.text = self.list?[indexPath.row].strMeal
         cell.detailTextLabel?.text = self.list?[indexPath.row].strCategory
+       
+        if let thumbPath =  self.list?[indexPath.row].strMealThumb {
+            
+            tasksmap[cell] = ImageLoader.intance.imageLoader(urlString: thumbPath, placeHolder: cell.imageView!)
+        }
 
         return cell
     }
 
+    
     
     @IBAction func onSearchChange(_ sender: UITextField) {
         print("searchString : \(sender.text)")
