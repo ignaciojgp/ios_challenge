@@ -27,7 +27,21 @@ class recipe_bookTests: XCTestCase {
         interactor.loadData(search: "la")
         
         
-        wait(for: [promise], timeout: 100)
+        wait(for: [promise], timeout: 10)
+
+        
+    }
+    
+    func testRecipeDetailInteractor() throws {
+        
+        let promise = expectation(description: "Wait for async response")
+        
+        let interactor = RecipeDetailInteractor()
+        
+        interactor.loadRecipe(id: "52767")
+        
+        
+        wait(for: [promise], timeout: 10)
 
         
     }

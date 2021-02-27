@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct RecipeResponse:Codable{
+struct RecipeSearchResponse:Codable{
     var meals:Array<Recipe>?
 }

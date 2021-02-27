@@ -1,15 +1,17 @@
 //
-//  Recipe.swift
+//  RecipeDetail.swift
 //  recipe book
 //
 //  Created by Ignacio J Gonzalez Pérez on 27/02/21.
 //
 
-import UIKit
+import Foundation
 
-struct  Recipe: Codable {
+struct RecipeDetail: Codable {
+    
     var strMealThumb:String?
     var strMeal:String?
     var strCategory:String?
-    
+    var strYoutube:String?
+    var strInstructions:String?
 }
