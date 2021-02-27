@@ -8,6 +8,7 @@
 import UIKit
 
 struct  Recipe: Codable {
+    var idMeal:String?
     var strMealThumb:String?
     var strMeal:String?
     var strCategory:String?

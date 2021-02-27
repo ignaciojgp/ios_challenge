@@ -8,7 +8,10 @@
 import UIKit
 
 class RecipeSearchRouter: NSObject, RecipeSearchRouterProtocol {
-    static func initModule(viewref: RecipeSearchViewProtocol ) {
+    
+    weak var viewController: UIViewController?
+    
+    static func initModule(viewref: UIViewController & RecipeSearchViewProtocol ) {
         
         
         let presenter = RecipeSearchPresenter()
@@ -22,9 +25,13 @@ class RecipeSearchRouter: NSObject, RecipeSearchRouterProtocol {
         interactor.presenter = presenter
         presenter.view?.presenter = presenter
 
-        
+        router.viewController = viewref
     }
     
+    func goToDetail(origin:UIViewController,  mealId: String) {
+        RecipeDetailRouter.launch(origin: origin, mealId: mealId)
+        
+    }
     
    
     

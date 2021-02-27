@@ -72,10 +72,16 @@ class RecipeSearchViewTableViewController: UITableViewController,  RecipeSearchV
         return cell
     }
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if let recipe = self.list?[indexPath.row], let id = recipe.idMeal {
+            presenter?.userDidTapOnRecipeWith(sender: self, id: id)
+        }
+    }
     
     
     @IBAction func onSearchChange(_ sender: UITextField) {
-        print("searchString : \(sender.text)")
+        print("searchString : \(sender.text ?? "")")
         self.presenter?.searchRecipe(search: sender.text ?? "")
     }
     

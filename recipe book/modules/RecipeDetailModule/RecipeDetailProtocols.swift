@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 
 protocol RecipeDetailPresenterProtocol {
@@ -14,6 +15,8 @@ protocol RecipeDetailPresenterProtocol {
     var interactor:RecipeDetailInteractorProtocol?{get set}
     var router:RecipeDetailRouterProtocol?{get set}
     
+    var mealID:String? {get set}
+    
     
 }
 
@@ -21,14 +24,13 @@ protocol RecipeDetailPresenterProtocol {
 protocol RecipeDetailViewProtocol {
     var presenter: RecipeDetailViewDelegate?{get set}
     
-    //add showData function
-    //add showError function
+    func showData(recipe:RecipeDetail)
+    func showError(message:String)
     
 }
 
 protocol RecipeDetailViewDelegate{
     func fetchData()
-    //add onUserDoSomething
 }
 
 
@@ -48,5 +50,5 @@ protocol RecipeDetailInteractorListenerProtocol {
 /* presenter */
 
 protocol RecipeDetailRouterProtocol {
-    static func initModule(viewref:RecipeDetailViewProtocol)
+    static func initModule(viewref: UIViewController & RecipeDetailViewProtocol )
 }

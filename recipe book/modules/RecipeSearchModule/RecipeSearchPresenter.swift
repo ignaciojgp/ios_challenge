@@ -29,9 +29,12 @@ class RecipeSearchPresenter: NSObject, RecipeSearchPresenterProtocol , RecipeSea
     func searchRecipe(search: String) {
         self.interactor?.loadData(search: search)
     }
-    func userDidTapOnRecipe(id: String) {
-        
+    
+
+    func userDidTapOnRecipeWith(sender: UIViewController, id: String) {
+        self.router?.goToDetail(origin: sender, mealId: id)
     }
+    
     func viewDidLoad() {
         
     }

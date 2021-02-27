@@ -32,11 +32,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="wUv-3p-g43">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ulx-Oq-38o">
-                                    <rect key="frame" x="16" y="33" width="382" height="34"/>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="busca una receta" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ulx-Oq-38o">
+                                    <rect key="frame" x="16" y="16" width="382" height="43"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                     <connections>
@@ -44,17 +44,17 @@
                                     </connections>
                                 </textField>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemGrayColor"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="ulx-Oq-38o" firstAttribute="leading" secondItem="wUv-3p-g43" secondAttribute="leading" constant="16" id="IE4-Bv-Mye"/>
                                 <constraint firstAttribute="trailing" secondItem="ulx-Oq-38o" secondAttribute="trailing" constant="16" id="T5M-mt-adc"/>
-                                <constraint firstItem="ulx-Oq-38o" firstAttribute="top" secondItem="wUv-3p-g43" secondAttribute="top" constant="33" id="mKN-nK-n6l"/>
-                                <constraint firstAttribute="bottom" secondItem="ulx-Oq-38o" secondAttribute="bottom" constant="33" id="rTT-24-dBY"/>
+                                <constraint firstItem="ulx-Oq-38o" firstAttribute="top" secondItem="wUv-3p-g43" secondAttribute="top" constant="16" id="mKN-nK-n6l"/>
+                                <constraint firstAttribute="bottom" secondItem="ulx-Oq-38o" secondAttribute="bottom" constant="16" id="rTT-24-dBY"/>
                             </constraints>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="defaultcell" textLabel="0dI-Vv-r6I" detailTextLabel="esR-UK-Cg5" rowHeight="72" style="IBUITableViewCellStyleSubtitle" id="W1r-kZ-Ara">
-                                <rect key="frame" x="0.0" y="128" width="414" height="72"/>
+                                <rect key="frame" x="0.0" y="103" width="414" height="72"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="W1r-kZ-Ara" id="J7v-pN-P05">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="72"/>
@@ -93,9 +93,6 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGrayColor">
-            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

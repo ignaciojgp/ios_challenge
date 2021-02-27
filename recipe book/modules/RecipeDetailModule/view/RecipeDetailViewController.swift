@@ -7,15 +7,52 @@
 
 import UIKit
 
-class RecipeDetailViewController: UIViewController {
-
+class RecipeDetailViewController: UIViewController, RecipeDetailViewProtocol {
+    
+    
+    var presenter: RecipeDetailViewDelegate?
+    
+    @IBOutlet weak var iamge: UIImageView!
+    @IBOutlet weak var instructions: UITextView!
+    @IBOutlet weak var ingredients: UITableView!
+    
+    var recipe:RecipeDetail?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        RecipeDetailRouter.initModule(viewref: self)
 
-        // Do any additional setup after loading the view.
+        presenter?.fetchData()
     }
 
-
+    func showData(recipe: RecipeDetail) {
+        
+        self.recipe = recipe
+        if let imageURL = recipe.strMealThumb{
+            let _ =  ImageLoader.intance.imageLoader(urlString: imageURL, placeHolder: self.iamge)
+        }
+        
+        instructions.text = recipe.strInstructions
+        
+        self.navigationItem.title = recipe.strMeal
+    }
+    
+    func showError(message: String) {
+        
+    }
+    @IBAction func onplay(_ sender: Any) {
+        
+        guard let url = URL(string: self.recipe!.strYoutube!) else{
+            return
+        }
+        
+        UIApplication.shared.open(url, options: [:],
+                                  completionHandler: {
+                                    (success) in
+                                  })
+    }
+    
     /*
     // MARK: - Navigation
 
