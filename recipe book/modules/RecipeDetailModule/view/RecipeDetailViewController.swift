@@ -40,7 +40,15 @@ class RecipeDetailViewController: UIViewController, RecipeDetailViewProtocol {
     }
     
     func showError(message: String) {
+        let alert = UIAlertController(title: "Oops", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Aceptar", style: .default, handler: { (action) in
+            print("accept")
+        }))
         
+       
+        self.present(alert, animated: true) {
+            //not doing anything
+        }
     }
     @IBAction func onplay(_ sender: Any) {
         

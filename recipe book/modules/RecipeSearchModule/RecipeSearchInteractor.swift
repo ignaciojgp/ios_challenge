@@ -34,7 +34,7 @@ class RecipeSearchInteractor: NSObject, RecipeSearchInteractorProtocol {
                 
                 guard let httpResponse = response as? HTTPURLResponse else {
                     DispatchQueue.main.async {
-                        self.presenter?.onLoadDataFailure(description: "Ocurrió un error")
+                        self.presenter?.onLoadDataFailure(description: "Revisa tu conexión")
                         
                     }
                     return
