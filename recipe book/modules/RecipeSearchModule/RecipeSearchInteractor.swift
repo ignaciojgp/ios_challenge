@@ -59,6 +59,9 @@ class RecipeSearchInteractor: NSObject, RecipeSearchInteractorProtocol {
                 
                 do{
                     let decoder = JSONDecoder()
+                    
+                    print(String(data: responseData, encoding: .utf8))
+                    
                     let decodedResponse = try decoder.decode(RecipeSearchResponse.self, from: responseData)
                     
                     guard let list = decodedResponse.meals else {
